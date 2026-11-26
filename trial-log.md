@@ -35,4 +35,20 @@ Competition: `u-motasimfuad-your-ai-therapist-s-diagnosis-4be14a41`
 
 ## Bundle / check history
 
-- v1 bundle + check: pending (to be recorded here after the run).
+- v1 bundle (26 Nov 2026 ~06:26 WITA): `u-motasimfuad-your-ai-therapist-s-diagnosis-4be14a41-bundle-v1.tar.gz`,
+  132,296 bytes, sha256 `3a05195d907095886865de59e91c719120dbd74bfcd3b022b31e6563fdad397b`.
+  Bundle note: 0 usage rows attached (subagent rows flush only when the run
+  completes — the coordinator re-bundles with usage rows afterwards).
+- v1 check (commit `ff364ba78108ecdc94d23987d00c5196e563c8f9`):
+  **12 passed / 2 failed / 5 skipped / 5 at submission**.
+  Passes include competition_open, snapshot, license_osi, entrypoint,
+  transcripts_present/recorded, thinking_wellformed, thinking_in_window,
+  thinking_reproduces (64 of 66 counted lines, 96.9%), thinking_turns,
+  transcripts_run_record, thinking_own_work.
+  FAIL (1) `thinking_priced` — 0 usage rows, expected for a builder
+  subagent; fixed by the coordinator's re-bundle with `--muse-usage`.
+  FAIL (2) `thinking_revised` — no file took its final content from 2+
+  messages (main.ts written once). Fix: this genuine revision of
+  trial-log.md with the real v1 bundle/check numbers above, committed as
+  a new commit, then re-bundle + re-check (v2 below).
+- v2 bundle + check: pending (to be recorded here after the run).
